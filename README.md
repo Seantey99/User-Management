@@ -12,6 +12,7 @@ This project provides a `UserService` class for managing user accounts in a Spri
 - [Endpoints & Methods](#endpoints--methods)
 - [Error Handling](#error-handling)
 - [Dependencies](#dependencies)
+- [Postman Collection](#postman--collection)
 
 ---
 
@@ -70,6 +71,9 @@ Lombok
 SLF4J (Logging)
 
 ---
+
+## Postman Collection
+Postman Collection file located in src\main\resources\postman_collection
 
 ## Author
 Tey Wei Sean
