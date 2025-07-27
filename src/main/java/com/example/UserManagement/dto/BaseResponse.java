@@ -21,7 +21,6 @@ public class BaseResponse<T> implements Serializable {
     private T data;
 
     public BaseResponse() {
-        // Default constructor
     }
 
     public BaseResponse(UserResponse user) {
