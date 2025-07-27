@@ -17,8 +17,7 @@ import static io.netty.util.internal.StringUtil.isNullOrEmpty;
 public class UserController {
     String RESPONSE_MESSAGE = "All fields cannot be null or empty";
     String USERNAME_MESSAGE = "Username must not be null or empty.";
-    // This class will handle user-related operations such as registration, login, and profile management.
-    // It will interact with the UserService to perform these operations.
+
     @Autowired
     private UserService userService;
 
