@@ -20,16 +20,13 @@ import java.util.UUID;
 @Slf4j
 public class UserService {
     String message;
-    // Inject the UserRepository to interact with the database
-    @Autowired
-    private UserRepository userRepository;
 
-    // This method checks if a string is null or empty.
+    @Autowired private UserRepository userRepository;
+
     private boolean isNullOrEmpty(String str) {
         return str == null || str.trim().isEmpty();
     }
 
-    // Example method for user registration
     @Transactional
     public ResponseEntity<UserResponse> registerUser(UserRequest userRequest) {
         String username = userRequest.getUsername();
@@ -45,7 +42,6 @@ public class UserService {
             return ResponseEntity.badRequest().body(response);
         }
 
-        // Create and save new user
         try {
             Users users = new Users();
             users.setId(UUID.randomUUID());
@@ -72,7 +68,6 @@ public class UserService {
         }
     }
 
-    //Method for delete user
     @Transactional
     public ResponseEntity<String> deleteUser(UserRequest userRequest) {
         String username = userRequest.getUsername();
