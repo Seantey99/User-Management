@@ -23,13 +23,7 @@ public class ThirdPartyApiService {
     public ThirdPartyApiService() {
         this.restTemplate = new RestTemplate();
     }
-
-    /**
-     * Calls the third-party API to create a user and handles both success and error responses.
-     *
-     * @param request the request payload containing user data
-     * @return the response from the third-party API, with clear success or error status
-     */
+    
     public ThirdPartyResponse callThirdPartyApi(ThirdPartyRequest request) {
         Map<String, Object> payload = buildPayload(request);
 
@@ -68,9 +62,6 @@ public class ThirdPartyApiService {
         }
     }
 
-    /**
-     * Builds the request payload map from non-null fields of the request.
-     */
     private Map<String, Object> buildPayload(ThirdPartyRequest request) {
         Map<String, Object> payload = new HashMap<>();
         if (request.getUsername() != null) payload.put("username", request.getUsername());
@@ -81,9 +72,6 @@ public class ThirdPartyApiService {
         return payload;
     }
 
-    /**
-     * Constructs a standardized success response.
-     */
     private ThirdPartyResponse buildSuccessResponse(String data) {
         ThirdPartyResponse response = new ThirdPartyResponse();
         response.setStatus("success");
@@ -91,9 +79,6 @@ public class ThirdPartyApiService {
         return response;
     }
 
-    /**
-     * Constructs a standardized error response.
-     */
     private ThirdPartyResponse buildErrorResponse(String message) {
         ThirdPartyResponse errorResponse = new ThirdPartyResponse();
         errorResponse.setStatus("error");
