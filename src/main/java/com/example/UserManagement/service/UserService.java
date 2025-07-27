@@ -33,7 +33,6 @@ public class UserService {
         String email = userRequest.getEmail();
         String phoneNumber = userRequest.getPhoneNumber();
 
-        // Check if username already exists
         if (userRepository.findByName(username) != null) {
             message = "Username already exists";
             log.error(message);
